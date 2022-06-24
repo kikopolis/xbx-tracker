@@ -5,5 +5,5 @@ export interface Workout {
     id: string;
     title: string;
     schedule: Schedule;
-    list: WorkoutExercises;
+    exercises: WorkoutExercises;
 }

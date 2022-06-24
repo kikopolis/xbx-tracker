@@ -1,9 +1,30 @@
 <heading-one [text]="'Workout'"></heading-one>
-<mat-form-field>
-	<mat-label>Select a workout regime</mat-label>
-	<mat-select>
-		<mat-option *ngFor="let regime of getList()" [value]="regime.getId()">
-			{{ regime.getTitle() }}
-		</mat-option>
-	</mat-select>
-</mat-form-field>
+<div class="row">
+	<div class="col-3">
+		<mat-form-field [class]="'w-100'">
+			<mat-label>Select a workout regime</mat-label>
+			<mat-select [(value)]="workoutId">
+				<mat-option [class]="'text-center'">None</mat-option>
+				<mat-option [class]="'text-center'" *ngFor="let regime of list" [value]="regime.id">
+					{{ regime.title }}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+	</div>
+	<div class="col-9 ps-5 pt-3">
+		<div class="w-100 text-center text-uppercase" *ngIf="!workoutId">
+			<h4>Please select a workout</h4>
+		</div>
+		
+		<div class="w-100" *ngIf="workoutId">
+			<h3 class="w-100 text-center text-uppercase">{{ getWorkout()?.title }}</h3>
+			<p>{{ getWorkout()?.schedule?.interval }}</p>
+			<h5>Exercises</h5>
+			<ul>
+				<li *ngFor="let exercise of getWorkout()?.exercises?.list">
+					<a href="#" data-click="open large description on click">{{ exercise.title }}</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

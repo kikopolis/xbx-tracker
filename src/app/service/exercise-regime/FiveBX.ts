@@ -12,47 +12,15 @@ import { GenericSchedule } from './schedule/GenericSchedule';
 )
 
 export class FiveBX implements Workout {
-    private id: string;
-    private title: string;
-    private list: WorkoutExercises;
-    private schedule: Schedule;
+    public id: string;
+    public title: string;
+    public exercises: WorkoutExercises;
+    public schedule: Schedule;
     
     constructor() {
         this.id = 'five-bx-temp-id';
         this.title = 'FiveBX';
-        this.list = new GenericList('five-bx-temp-contracts-list-id', []);
+        this.exercises = new GenericList('five-bx-temp-contracts-list-id', []);
         this.schedule = new GenericSchedule('every-day-temp-schedule', 'Once per day');
-    }
-    
-    public getId(): string {
-        return this.id;
-    }
-    
-    public setId(id: string): void {
-        this.id = id;
-    }
-    
-    public getTitle(): string {
-        return this.title;
-    }
-    
-    public setTitle(title: string): void {
-        this.title = title;
-    }
-    
-    public getExerciseList(): WorkoutExercises {
-        return this.list;
-    }
-    
-    public setExerciseList(list: WorkoutExercises): void {
-        this.list = list;
-    }
-    
-    public getSchedule(): Schedule {
-        return this.schedule;
-    }
-    
-    public setSchedule(schedule: Schedule): void {
-        this.schedule = schedule;
     }
 }
