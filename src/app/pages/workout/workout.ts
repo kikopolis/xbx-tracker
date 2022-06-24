@@ -1,5 +1,5 @@
 import { Component }      from '@angular/core';
-import { ExerciseRegime } from '../../exercise/exercise';
+import { ExerciseRegime } from 'src/app/exercise/exercise-regime';
 
 @Component(
     {
