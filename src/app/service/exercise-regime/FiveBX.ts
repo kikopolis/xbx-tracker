@@ -1,8 +1,8 @@
-import { Injectable }      from '@angular/core';
-import { ExerciseRegime }  from '../../exercise/exercise-regime';
-import { Schedule }        from '../../exercise/schedule';
-import { ExerciseList }    from '../../exercise/exercise-list';
-import { GenericList }     from './exercise-list/GenericList';
+import { Injectable } from '@angular/core';
+import { Workout }    from '../../contracts/workout/workout';
+import { Schedule }         from '../../contracts/workout/schedule';
+import { WorkoutExercises } from '../../contracts/workout/workout-exercises';
+import { GenericList }      from './exercise-list/GenericList';
 import { GenericSchedule } from './schedule/GenericSchedule';
 
 @Injectable(
@@ -11,16 +11,16 @@ import { GenericSchedule } from './schedule/GenericSchedule';
     },
 )
 
-export class FiveBX implements ExerciseRegime {
+export class FiveBX implements Workout {
     private id: string;
     private title: string;
-    private list: ExerciseList;
+    private list: WorkoutExercises;
     private schedule: Schedule;
     
     constructor() {
         this.id = 'five-bx-temp-id';
         this.title = 'FiveBX';
-        this.list = new GenericList('five-bx-temp-exercise-list-id', []);
+        this.list = new GenericList('five-bx-temp-contracts-list-id', []);
         this.schedule = new GenericSchedule('every-day-temp-schedule', 'Once per day');
     }
     
@@ -40,11 +40,11 @@ export class FiveBX implements ExerciseRegime {
         this.title = title;
     }
     
-    public getExerciseList(): ExerciseList {
+    public getExerciseList(): WorkoutExercises {
         return this.list;
     }
     
-    public setExerciseList(list: ExerciseList): void {
+    public setExerciseList(list: WorkoutExercises): void {
         this.list = list;
     }
     

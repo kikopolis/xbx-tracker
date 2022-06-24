@@ -1,5 +1,7 @@
-import { Component }      from '@angular/core';
-import { ExerciseRegime } from 'src/app/exercise/exercise-regime';
+import { Component, OnInit } from '@angular/core';
+import { Workout as WorkoutInterface }           from 'src/app/contracts/workout/workout';
+import { FiveBX }            from '../../service/exercise-regime/FiveBX';
+import { TenBX }             from '../../service/exercise-regime/TenBX';
 
 @Component(
     {
@@ -8,14 +10,31 @@ import { ExerciseRegime } from 'src/app/exercise/exercise-regime';
         styleUrls  : ['./workout.scss'],
     },
 )
-export class Workout {
-    private exercise: ExerciseRegime | null = null;
+export class Workout implements OnInit {
+    private list: WorkoutInterface[] | [] = [];
+    private workout: WorkoutInterface | null = null;
     
-    public setExercise(exercise: ExerciseRegime) {
-        this.exercise = exercise;
+    public getList(): WorkoutInterface[] | [] {
+        return this.list;
     }
     
-    public getExercise(): ExerciseRegime | null {
-        return this.exercise;
+    public setList(value: WorkoutInterface[] | []) {
+        this.list = value;
+    }
+    
+    public setExercise(exercise: WorkoutInterface) {
+        this.workout = exercise;
+    }
+    
+    public getExercise(): WorkoutInterface | null {
+        return this.workout;
+    }
+    
+    public ngOnInit(): void {
+        const all = [
+            new FiveBX(),
+            new TenBX(),
+        ];
+        this.setList(all);
     }
 }

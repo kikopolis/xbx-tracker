@@ -1,1 +1,9 @@
 <heading-one [text]="'Workout'"></heading-one>
+<mat-form-field>
+	<mat-label>Select a workout regime</mat-label>
+	<mat-select>
+		<mat-option *ngFor="let regime of getList()" [value]="regime.getId()">
+			{{ regime.getTitle() }}
+		</mat-option>
+	</mat-select>
+</mat-form-field>

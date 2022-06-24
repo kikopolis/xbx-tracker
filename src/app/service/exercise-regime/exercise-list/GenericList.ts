@@ -1,7 +1,7 @@
-import { ExerciseList } from '../../../exercise/exercise-list';
-import { Exercise }     from '../../../exercise/exercise';
+import { WorkoutExercises } from '../../../contracts/workout/workout-exercises';
+import { Exercise }         from '../../../contracts/workout/exercise';
 
-export class GenericList implements ExerciseList {
+export class GenericList implements WorkoutExercises {
     constructor(private id: string, private list: Exercise[] | []) {
     }
     

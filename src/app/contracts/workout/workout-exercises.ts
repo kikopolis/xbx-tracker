@@ -1,6 +1,6 @@
 import { Exercise } from './exercise';
 
-export interface ExerciseList {
+export interface WorkoutExercises {
     getId: () => string;
     setId: (id: string) => void;
     getList: () => Exercise[] | [];

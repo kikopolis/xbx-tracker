@@ -7,8 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Header }                  from './layout/header/header';
 import { Workout }                 from './pages/workout/workout';
 import { Dashboard }               from './pages/dashboard/dashboard';
-import { History }    from './pages/history/history';
-import { HeadingOne } from './layout/components/headings/heading-one/heading-one';
+import { History }                 from './pages/history/history';
+import { HeadingOne }              from './layout/components/headings/heading-one/heading-one';
+import { MatSelectModule }         from '@angular/material/select';
 
 @NgModule(
     {
@@ -20,10 +21,11 @@ import { HeadingOne } from './layout/components/headings/heading-one/heading-one
             History,
             HeadingOne
         ],
-        imports     : [
+        imports: [
             BrowserModule,
             AppRoutingModule,
             BrowserAnimationsModule,
+            MatSelectModule,
         ],
         providers   : [],
         bootstrap   : [AppComponent],

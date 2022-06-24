@@ -1,11 +1,17 @@
-import { TestBed }    from '@angular/core/testing';
-import { Workout }    from './workout';
-import { HeadingOne } from '../../layout/components/headings/heading-one/heading-one';
-import { By }         from '@angular/platform-browser';
+import { TestBed }      from '@angular/core/testing';
+import { Workout }      from './workout';
+import { HeadingOne }   from '../../layout/components/headings/heading-one/heading-one';
+import { By }           from '@angular/platform-browser';
 
 describe('Workout', () => {
     beforeEach(async () => {
-        await TestBed.configureTestingModule({ declarations: [Workout, HeadingOne] }).compileComponents();
+        await TestBed.configureTestingModule(
+            {
+                declarations: [
+                    Workout,
+                    HeadingOne
+                ],
+            }).compileComponents();
     });
     
     it('should create the workout component', function () {

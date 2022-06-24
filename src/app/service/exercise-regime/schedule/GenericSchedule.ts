@@ -1,4 +1,4 @@
-import { Schedule } from '../../../exercise/schedule';
+import { Schedule } from '../../../contracts/workout/schedule';
 
 export class GenericSchedule implements Schedule {
     constructor(private id: string, private interval: string) {
