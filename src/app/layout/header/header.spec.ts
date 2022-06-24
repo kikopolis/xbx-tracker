@@ -15,7 +15,7 @@ describe('Header', () => {
     it('should contain the navbar title', function () {
         const fixture = TestBed.createComponent(Header);
         const header = fixture.nativeElement as HTMLElement;
-        expect(header.querySelector('.navbar .navbar-brand')?.textContent).toContain('The X BX Tracker');
+        expect(header.querySelector('.navbar .navbar-brand')?.textContent).toContain('The Exercise Tracker');
     });
     
     it('should contain navigation links', function () {
