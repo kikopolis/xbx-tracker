@@ -1,8 +1,8 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Workout }              from './pages/workout/workout';
-import { Dashboard }            from './pages/dashboard/dashboard';
-import { History }              from './pages/history/history';
+import { Workout }   from './pages/workout/workout';
+import { Dashboard } from './pages/dashboard/dashboard';
+import { History }   from './pages/history/history';
 
 const routes: Routes = [
     { path: 'dashboard', component: Dashboard },
