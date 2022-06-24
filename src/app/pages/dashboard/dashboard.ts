@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { FiveBX }    from '../../service/FiveBX';
-import { TenBX }     from '../../service/TenBX';
 
 @Component(
     {
@@ -10,9 +8,4 @@ import { TenBX }     from '../../service/TenBX';
     },
 )
 export class Dashboard {
-    constructor(
-        private fiveBX: FiveBX,
-        private tenBX: TenBX,
-    ) {
-    }
 }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component }      from '@angular/core';
+import { ExerciseRegime } from '../../exercise/exercise';
 
 @Component(
     {
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
         styleUrls  : ['./workout.scss'],
     },
 )
-export class Workout {}
+export class Workout {
+    private exercise: ExerciseRegime | null = null;
+    
+    public setExercise(exercise: ExerciseRegime) {
+        this.exercise = exercise;
+    }
+    
+    public getExercise(): ExerciseRegime | null {
+        return this.exercise;
+    }
+}
